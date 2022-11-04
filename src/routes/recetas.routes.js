@@ -29,12 +29,12 @@ router
       check("ingredientes")
         .notEmpty()
         .withMessage("los ingredientes son obligatorios")
-        .isLength({ min: 10, max: 600 })
+        .isLength({ min: 50, max: 500 })
         .withMessage("La cantidad de caracteres debe estar entre 10 y 600"),
       check("categoria")
         .notEmpty()
         .withMessage("la categoria es obligatoria")
-        .isIn("Ensaladas", "Pollo", "Pastas", "Guisos", "Postres")
+        .isIn(["Ensaladas", "Pollo", "Pastas", "Guisos", "Postres"])
         .withMessage("debe ingresar una categoria valida"),
     ],
     crearReceta
@@ -64,7 +64,7 @@ router
       check("categoria")
         .notEmpty()
         .withMessage("la categoria es obligatoria")
-        .isIn("Ensaladas", "Pollo", "Pastas", "Guisos", "Postres")
+        .isIn(["Ensaladas", "Pollo", "Pastas", "Guisos", "Postres"])
         .withMessage("debe ingresar una categoria valida"),
     ],
     editarReceta
